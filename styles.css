@@ -1,5 +1,61 @@
-/*
+/* apply font to the whole file */
+/* color palate */
+:root {
+  --yellow-green-crayola: hsla(81, 69%, 76%, 1);
+  --amethyst: hsla(266, 39%, 56%, 1);
+  --cyan-process: hsla(193, 99%, 47%, 1);
+  --fuzzy-wuzzy: hsla(7, 48%, 59%, 1);
+  --pale-pink: hsla(354, 79%, 91%, 1);
+}
 
-  ADD YOUR STYLES HERE
+* {
+font-family: 'Indie Flower', cursive;
+font-weight: 600;
+}
 
-*/
+#background {
+  background: url('images/drinks.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 50%;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+#forms {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#results button {
+  display: none;
+}
+
+/* how I call my color palate in a block 
+color:var(--pale-pink); */
+
+.highlight {
+  background-color: yellow;
+}
+
+.drink-name {
+  /* do stuff to print out drink names nicely */
+}

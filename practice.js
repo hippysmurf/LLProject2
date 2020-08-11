@@ -152,4 +152,15 @@ function convertStringToDigits(myString) {
 
 convertStringToDigits('aacfz');
 
+function wordCount(wordsArray, searchWord) {
+    var numTimes = 0;
+    for (var i = 0; i < wordsArray.length; i++) {
+        if (wordsArray[i] === searchWord) {
+            numTimes++;
+        }
+    }
+    return numTimes;
+  };
 
+  myArray = ['cow', 'cat', 'dog', 'bunny', 'cow'];
+  console.log(wordCount(myArray, 'bird'));

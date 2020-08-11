@@ -3,22 +3,34 @@
   <head>
     <!-- Include the stylesheet -->
     <link rel="stylesheet" href="./styles.css">
-    <title>jQuery Project</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./index.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <title>Drink Generator</title>
   </head>
   <body>
+    <div id="background"></div>
     <header>
-      <h1>My jQuery Project</h1>
+      <h1>Thirsty? Choose a drink or an ingredient!</h1>
     </header>
     <main>
+      <div id="forms">
       <form>
-        <input type="text" name="search-term" />
-        <button type="submit">Search</button>
+        <input type="text" name="drink_type" placeholder="e.g. Shirley Temple" />
+        <button type="submit">Find me the ingredients!</button>
       </form>
+      <form>
+        <input type="text" name="ingredient" placeholder="e.g. soda water"/>
+        <button type="submit">Find me a drink!</button>
+      </form>
+    </div>
+      <div id="results">
+        <div></div>
+        <button name="reset">Search Again</button>
+      </div>
     </main>
     <footer>
       <!-- Add footer content -->
     </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="./index.js"></script>
   </body>
 </html>
