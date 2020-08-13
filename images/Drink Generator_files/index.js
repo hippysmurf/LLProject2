@@ -13,6 +13,7 @@ function buildDrinksHtml(drinkData) {
 
 // returns a list of ingredients based on drink type in HTML
 function buildIngredientsHtml (drinkData) {
+  //console.log(drinkData);
   var ingredientsHtml = '';
 if (drinkData.drinks !== null) {
      for (var i = 0; i < drinkData.drinks.length; i++) {
@@ -24,10 +25,12 @@ if (drinkData.drinks !== null) {
       // create a counter to loop through each ingredient until the list is empty
       var numIng = 1;
       var nextIngredient = d["strIngredient" + numIng]; 
+      console.log(nextIngredient);
       while (nextIngredient !== null) {
         ingredientsHtml += "<p class='drink-name'>" + nextIngredient + "</p>";
         numIng++;
         nextIngredient = d["strIngredient" + numIng]; 
+        console.log(nextIngredient);
       }
      }
   }
@@ -35,9 +38,10 @@ if (drinkData.drinks !== null) {
 }
 
 // gets the data based on user input
-function getData(inputValue, isDrink) {
-  // dataFromHttpRequest = based on the input, get the data via http request (returns exactly what we're looking for)
-  $.get("https://www.thecocktaildb.com/api/json/v1/1/search.php?s="+inputValue, function (response) {
+function getData(ingredient, isDrink) {
+  // dataFromHttpRequest = based on the ingredient, get the data via http request (returns exactly what we're looking for)
+  $.get("https://www.thecocktaildb.com/api/json/v1/1/search.php?s="+ingredient, function (response) {
+    console.log(response);
     if (isDrink) {
       var newHtml = buildDrinksHtml(response);
     }
@@ -71,9 +75,17 @@ $('form').on('submit', function(event) {
       getData(inputValue, true);
     }
     else {
-      // fail gracefully
+      console.log("input not recognized");
+      // fail gracefully clear form
     }
   
+   // $("input[name$='drink_type']").findDrink('drink_type');
+ // }
+    
+    //$('input[name$="ingredient"]'). {
+      // call a function
+    //}
+
    $("#results button[name=reset]").on("click", function(event) { 
     $(this).hide();
     $("#results div").empty();
@@ -85,5 +97,6 @@ $('form').on('submit', function(event) {
   }) // end event handler
 }) // end of document ready
 
+// use replaceWith("stuff") or remove() or append() etc for output of selection
 
 

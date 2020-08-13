@@ -13,11 +13,6 @@ font-family: 'Indie Flower', cursive;
 font-weight: 600;
 }
 
-body {
-  height: 100vh;
-  margin: 0;
-}
-
 #background {
   background: url('images/drinks.jpg');
   background-size: cover;
@@ -48,17 +43,6 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-#results > div:first-child {
-  position: absolute;
-  top: 135px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: scroll;
-  height: 80vh;
-  text-align: center;
 }
 
 #results button {
